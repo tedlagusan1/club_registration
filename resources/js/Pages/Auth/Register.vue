@@ -36,12 +36,16 @@ function handleIdPhotoChange(event) {
   form.id_photo = event.target.files[0];
 }
 
+import { router } from '@inertiajs/vue3';
+
 const submit = () => {
-    // IMPORTANT: When posting files, Inertia needs the data object to be sent directly
-    // without the `.data` property, and it performs a multipart/form-data request automatically.
     form.post(route('register'), {
-        forceFormData: true, // Ensure multipart/form-data
-        onFinish: () => form.reset('password', 'password_confirmation', 'id_photo'), // Reset photo field too
+        forceFormData: true,
+        onSuccess: () => {
+            alert('Account registered');
+            router.visit(route('login'));
+        },
+        onFinish: () => form.reset('password', 'password_confirmation', 'id_photo'),
     });
 };
 </script>

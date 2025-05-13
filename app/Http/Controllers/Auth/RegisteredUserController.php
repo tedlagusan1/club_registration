@@ -71,8 +71,10 @@ class RegisteredUserController extends Controller
             'status' => 'pending',
         ]);
 
-        event(new Registered($user));
+        // Remove automatic login after registration
+        // Auth::login($user);
 
-        return redirect(route('login'))->with('status', 'Registration successful! Please check your email to verify your account. Your club application is pending approval.');
+        // Redirect back with success status so frontend can handle redirect to login
+        return redirect()->back()->with('status', 'Registration successful! Please log in with your new account. Your club application is pending approval.');
     }
 }
