@@ -1,0 +1,33 @@
+/* Monochrome style for login and register pages */
+
+.monochrome {
+  @apply bg-gray-200 text-gray-900;
+}
+
+.monochrome-container {
+  @apply bg-gray-100;
+}
+
+.monochrome-form {
+  @apply text-gray-900;
+}
+
+.monochrome-text {
+  @apply text-gray-700;
+}
+
+.monochrome-link {
+  @apply text-gray-700 underline hover:text-gray-900;
+}
+
+.monochrome-button {
+  @apply bg-gray-700 text-white hover:bg-gray-900;
+}
+
+.monochrome-select {
+  @apply bg-white border-gray-400 text-gray-900;
+}
+
+.monochrome-input-file {
+  @apply bg-white border-gray-400 text-gray-900;
+}
